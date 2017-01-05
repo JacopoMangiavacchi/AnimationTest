@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NuE-Pl-xvK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Onf-aj-jx4">
+            <objects>
+                <viewController id="NuE-Pl-xvK" customClass="ViewController" customModule="YesNo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xA4-7c-3EG"/>
+                        <viewControllerLayoutGuide type="bottom" id="1HF-Ap-fdu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ub0-Bd-ipp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ro9-HJ-c1C">
+                                <rect key="frame" x="48" y="428" width="278" height="98"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot; ... &quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxo-Pv-8U3">
+                                        <rect key="frame" x="0.0" y="0.0" width="278" height="98"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Uxo-Pv-8U3" firstAttribute="top" secondItem="Ro9-HJ-c1C" secondAttribute="top" id="7uO-EG-D9X"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uxo-Pv-8U3" secondAttribute="trailing" id="KA8-ia-PRv"/>
+                                    <constraint firstAttribute="width" constant="278" id="bNa-RY-kxu"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uxo-Pv-8U3" secondAttribute="bottom" id="e5G-Lb-jRz"/>
+                                    <constraint firstAttribute="height" constant="98" id="fNX-tT-Wmx"/>
+                                    <constraint firstItem="Uxo-Pv-8U3" firstAttribute="leading" secondItem="Ro9-HJ-c1C" secondAttribute="leading" id="zPa-Uv-L64"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU1-cJ-2lO" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                <rect key="frame" x="88" y="527" width="200" height="200"/>
+                                <color key="backgroundColor" red="1" green="0.5746027682" blue="0.033291428409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="BEf-DM-sOG"/>
+                                    <constraint firstAttribute="width" constant="200" id="uAx-xO-4AS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onCancel:" destination="NuE-Pl-xvK" eventType="touchUpInside" id="g3X-KJ-W9T"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WT3-99-adD">
+                                <rect key="frame" x="0.0" y="234" width="375" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyL-Ro-xMh" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                        <rect key="frame" x="-60" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.42745098040000001" green="0.65098039220000004" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="2h0-fh-Dz1"/>
+                                            <constraint firstAttribute="width" constant="200" id="6bR-FX-dc2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onYes:" destination="NuE-Pl-xvK" eventType="touchUpInside" id="Fub-pQ-Xb8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7a-Xu-QZc" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                        <rect key="frame" x="235" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" red="1" green="0.34069317329999999" blue="0.14403454490000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="kQ0-W6-sHM"/>
+                                            <constraint firstAttribute="height" constant="200" id="xop-qt-AEa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="No">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onNo:" destination="NuE-Pl-xvK" eventType="touchUpInside" id="QPO-5e-LT3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="M7a-Xu-QZc" firstAttribute="top" secondItem="WT3-99-adD" secondAttribute="top" id="E5J-pm-So7"/>
+                                    <constraint firstAttribute="trailing" secondItem="M7a-Xu-QZc" secondAttribute="trailing" constant="-60" id="Eit-i0-Rye"/>
+                                    <constraint firstItem="kyL-Ro-xMh" firstAttribute="leading" secondItem="WT3-99-adD" secondAttribute="leading" constant="-60" id="GjK-Vn-FdB"/>
+                                    <constraint firstAttribute="height" constant="200" id="S75-oW-oZ3"/>
+                                    <constraint firstItem="kyL-Ro-xMh" firstAttribute="top" secondItem="WT3-99-adD" secondAttribute="top" id="oSi-zr-vM7"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGg-Hl-gAA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="234"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="dSc-Rh-A4K">
+                                        <rect key="frame" x="20" y="97.5" width="335" height="39"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-bU-cPn" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="39" height="39"/>
+                                                <color key="backgroundColor" red="1" green="0.34069317329999999" blue="0.14403454490000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Vga-bU-cPn" secondAttribute="height" multiplier="1:1" id="iMP-9Z-Df3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzN-l3-YBt" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                                <rect key="frame" x="98.5" y="0.0" width="39" height="39"/>
+                                                <color key="backgroundColor" red="1" green="0.5746027682" blue="0.033291428409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xzN-l3-YBt" secondAttribute="height" multiplier="1:1" id="nyV-s2-ZDx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpU-2r-F7y" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                                <rect key="frame" x="197.5" y="0.0" width="39" height="39"/>
+                                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="QpU-2r-F7y" secondAttribute="height" multiplier="1:1" id="kEb-Vm-N7y"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCP-Ig-lDS" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                                <rect key="frame" x="296" y="0.0" width="39" height="39"/>
+                                                <color key="backgroundColor" red="0.42745098040000001" green="0.65098039220000004" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qCP-Ig-lDS" secondAttribute="height" multiplier="1:1" id="cjJ-0w-b8G"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dSc-Rh-A4K" secondAttribute="trailing" constant="20" id="6UA-di-Jnz"/>
+                                    <constraint firstItem="dSc-Rh-A4K" firstAttribute="leading" secondItem="bGg-Hl-gAA" secondAttribute="leading" constant="20" id="oeR-3M-key"/>
+                                    <constraint firstItem="dSc-Rh-A4K" firstAttribute="centerY" secondItem="bGg-Hl-gAA" secondAttribute="centerY" id="tmZ-R7-nmE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-YZ-DLz">
+                                <rect key="frame" x="0.0" y="234" width="375" height="433"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-u2-izZ" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="66" width="300" height="300"/>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="7IN-RW-CZD"/>
+                                            <constraint firstAttribute="height" constant="300" id="wu0-Dz-ZxS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Speak">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSpeak:" destination="NuE-Pl-xvK" eventType="touchUpInside" id="JET-Wv-SaL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZRH-u2-izZ" firstAttribute="centerY" secondItem="1Kb-YZ-DLz" secondAttribute="centerY" id="7qo-Gy-zBi"/>
+                                    <constraint firstItem="ZRH-u2-izZ" firstAttribute="centerX" secondItem="1Kb-YZ-DLz" secondAttribute="centerX" id="JSQ-hH-FOC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ro9-HJ-c1C" firstAttribute="centerX" secondItem="Ub0-Bd-ipp" secondAttribute="centerX" id="13H-4S-VUm"/>
+                            <constraint firstItem="1HF-Ap-fdu" firstAttribute="top" secondItem="1Kb-YZ-DLz" secondAttribute="bottom" id="1dT-On-hYr"/>
+                            <constraint firstItem="WT3-99-adD" firstAttribute="centerX" secondItem="Ub0-Bd-ipp" secondAttribute="centerX" id="HlE-VY-5nT"/>
+                            <constraint firstItem="1Kb-YZ-DLz" firstAttribute="top" secondItem="bGg-Hl-gAA" secondAttribute="bottom" id="J5u-Td-LBk"/>
+                            <constraint firstItem="WT3-99-adD" firstAttribute="centerY" secondItem="Ub0-Bd-ipp" secondAttribute="centerY" id="PNN-Gc-0Be"/>
+                            <constraint firstItem="WT3-99-adD" firstAttribute="leading" secondItem="Ub0-Bd-ipp" secondAttribute="leading" id="Rpt-K6-zIz"/>
+                            <constraint firstAttribute="bottom" secondItem="qU1-cJ-2lO" secondAttribute="bottom" constant="-60" id="UeD-hS-LRk"/>
+                            <constraint firstItem="WT3-99-adD" firstAttribute="top" secondItem="bGg-Hl-gAA" secondAttribute="bottom" id="Xfu-bU-HB2"/>
+                            <constraint firstItem="bGg-Hl-gAA" firstAttribute="trailing" secondItem="1Kb-YZ-DLz" secondAttribute="trailing" id="bmc-0M-nv9"/>
+                            <constraint firstItem="qU1-cJ-2lO" firstAttribute="centerX" secondItem="Ub0-Bd-ipp" secondAttribute="centerX" id="csh-w9-Xt6"/>
+                            <constraint firstItem="bGg-Hl-gAA" firstAttribute="leading" secondItem="WT3-99-adD" secondAttribute="leading" id="fgh-xK-coc"/>
+                            <constraint firstItem="bGg-Hl-gAA" firstAttribute="top" secondItem="Ub0-Bd-ipp" secondAttribute="top" id="ihe-x5-g1Q"/>
+                            <constraint firstItem="bGg-Hl-gAA" firstAttribute="trailing" secondItem="WT3-99-adD" secondAttribute="trailing" id="imG-tf-ghZ"/>
+                            <constraint firstItem="qU1-cJ-2lO" firstAttribute="top" secondItem="Ro9-HJ-c1C" secondAttribute="bottom" constant="1" id="wM1-4m-pCN"/>
+                            <constraint firstItem="bGg-Hl-gAA" firstAttribute="leading" secondItem="1Kb-YZ-DLz" secondAttribute="leading" id="wl2-gN-HPs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="qU1-cJ-2lO" id="Dtf-Go-WaT"/>
+                        <outlet property="cancelSmallButton" destination="xzN-l3-YBt" id="P2b-bN-TPR"/>
+                        <outlet property="noButton" destination="M7a-Xu-QZc" id="m2d-Vd-uFG"/>
+                        <outlet property="noSmallButton" destination="Vga-bU-cPn" id="pEr-an-e8S"/>
+                        <outlet property="speakButton" destination="ZRH-u2-izZ" id="FN1-D1-mXX"/>
+                        <outlet property="speakSmallButton" destination="QpU-2r-F7y" id="JGK-5N-siR"/>
+                        <outlet property="speakView" destination="1Kb-YZ-DLz" id="hXB-8e-9fR"/>
+                        <outlet property="yesButton" destination="kyL-Ro-xMh" id="9Jp-o8-riK"/>
+                        <outlet property="yesSmallButton" destination="qCP-Ig-lDS" id="PXg-Ag-Lkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPZ-IL-p4t" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
