@@ -520,6 +520,7 @@
 				EA0728DC1E0A9837000F04BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA0728DD1E0A9837000F04BA /* Build configuration list for PBXNativeTarget "YesNoTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +529,7 @@
 				EA0728DF1E0A9837000F04BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA0728E01E0A9837000F04BA /* Build configuration list for PBXNativeTarget "YesNoUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +538,7 @@
 				EA0728E21E0A9837000F04BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

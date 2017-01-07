@@ -33,42 +33,73 @@ class ViewController: UIViewController {
             let cPoint = CGPoint(x: min(aPoint.x, bPoint.x) + (abs(bPoint.x - aPoint.x)/2),
                             y: min(aPoint.y, bPoint.y) + (abs(bPoint.y - aPoint.y)/2))
             
-            //a.alpha = 0
-            let circle = RoundedButton()
+            let circle = UIView()
             circle.backgroundColor = a.backgroundColor
             circle.frame = CGRect(origin: aPoint, size: a.frame.size)
-            circle.rounded = true
+            circle.layer.cornerRadius = circle.frame.size.height / 2
             mainView.addSubview(circle)
+            //a.alpha = 0
             
             let radius = sqrt(pow(abs(bPoint.x - aPoint.x),2) + pow(abs(bPoint.y - aPoint.y),2)) / 2;
             
             let v1 = CGVector(dx: aPoint.x - cPoint.x, dy: aPoint.y - cPoint.y)
             let v2 = CGVector(dx: radius - cPoint.x, dy: 0 - cPoint.y)
             
-            let angle = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
-            var deg = angle * CGFloat(180.0 / M_PI)
-            //if deg < 0 { deg += 360.0 }
+            var radiant = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
             
-            print("a(\(aPoint.x), \(aPoint.y)) b(\(bPoint.x), \(bPoint.y)) c(\(cPoint.x), \(cPoint.y)) angle:\(deg)")
+            if radiant > 0 {
+                //radiant -= CGFloat(M_PI)
+            }
+            
+            var deg = radiant * CGFloat(180.0 / M_PI)
+            if deg < 0 { deg += 360.0 }
+            print("a(\(aPoint.x), \(aPoint.y)) b(\(bPoint.x), \(bPoint.y)) c(\(cPoint.x), \(cPoint.y)) radiant:\(radiant)  degree:\(deg)")
 
-            let path = UIBezierPath(arcCenter: cPoint, radius: radius, startAngle: angle, endAngle: angle + CGFloat(M_PI), clockwise: false)
+            let path = UIBezierPath(arcCenter: cPoint, radius: radius, startAngle: radiant, endAngle: radiant + CGFloat(M_PI), clockwise: false)
             
-            let anim = CAKeyframeAnimation(keyPath: "position")
             
-            anim.path = path.cgPath
+            CATransaction.begin()
+            CATransaction.setCompletionBlock({
+                circle.alpha = 0
+                circle.removeFromSuperview()
+            })
             
-            anim.calculationMode = kCAAnimationLinear
-            anim.rotationMode =  kCAAnimationRotateAuto
-            anim.repeatCount = 0
-            anim.duration = 10.0
+            let duration = 10.0
             
-            circle.layer.add(anim, forKey: "animate position along path")
+            let posAnim = CAKeyframeAnimation(keyPath: "position")
+            posAnim.path = path.cgPath
+            posAnim.calculationMode = kCAAnimationLinear
+            //posAnim.rotationMode =  kCAAnimationRotateAuto
+            posAnim.repeatCount = 0
+            posAnim.duration = duration
+            posAnim.fillMode = kCAFillModeForwards
+            posAnim.isRemovedOnCompletion = false
+            
+            let sizeAnim = CABasicAnimation(keyPath: "bounds.size")
+            sizeAnim.repeatCount = 0
+            sizeAnim.duration = duration
+            sizeAnim.fillMode = kCAFillModeForwards
+            sizeAnim.isRemovedOnCompletion = false
+            sizeAnim.toValue = NSValue(cgSize: b.frame.size)
+            
+            let cornerAnim = CABasicAnimation(keyPath: "cornerRadius")
+            cornerAnim.repeatCount = 0
+            cornerAnim.duration = duration
+            cornerAnim.fillMode = kCAFillModeForwards
+            cornerAnim.isRemovedOnCompletion = false
+            cornerAnim.toValue = b.frame.size.height / 2
+
+            circle.layer.add(posAnim, forKey: nil)
+            circle.layer.add(sizeAnim, forKey: nil)
+            circle.layer.add(cornerAnim, forKey: nil)
+            
+            CATransaction.commit()
         }
         
-        animate(mainView: self.view, a: noSmallButton, b: noButton)
-        animate(mainView: self.view, a: cancelSmallButton, b: cancelButton)
+//        animate(mainView: self.view, a: noSmallButton, b: noButton)
+//        animate(mainView: self.view, a: cancelSmallButton, b: cancelButton)
+//        animate(mainView: self.view, a: yesSmallButton, b: yesButton)
         animate(mainView: self.view, a: speakSmallButton, b: speakButton)
-        animate(mainView: self.view, a: yesSmallButton, b: yesButton)
     }
     
     override func viewDidLoad() {
