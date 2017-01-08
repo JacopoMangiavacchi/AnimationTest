@@ -37,26 +37,18 @@ class ViewController: UIViewController {
             circle.backgroundColor = a.backgroundColor
             circle.frame = CGRect(origin: aPoint, size: a.frame.size)
             circle.layer.cornerRadius = circle.frame.size.height / 2
+            circle.layer.anchorPoint =  CGPoint(x: 0.0, y: 0.0)
             mainView.addSubview(circle)
             //a.alpha = 0
             
             let radius = sqrt(pow(abs(bPoint.x - aPoint.x),2) + pow(abs(bPoint.y - aPoint.y),2)) / 2;
             
             let v1 = CGVector(dx: aPoint.x - cPoint.x, dy: aPoint.y - cPoint.y)
-            let v2 = CGVector(dx: radius - cPoint.x, dy: 0 - cPoint.y)
+            let v2 = CGVector(dx: radius, dy: 0)
             
-            var radiant = atan2(v2.dy, v2.dx) - atan2(v1.dy, v1.dx)
+            let radiant = atan2(v1.dy, v1.dx) - atan2(v2.dy, v2.dx)
             
-            if radiant > 0 {
-                //radiant -= CGFloat(M_PI)
-            }
-            
-            var deg = radiant * CGFloat(180.0 / M_PI)
-            if deg < 0 { deg += 360.0 }
-            print("a(\(aPoint.x), \(aPoint.y)) b(\(bPoint.x), \(bPoint.y)) c(\(cPoint.x), \(cPoint.y)) radiant:\(radiant)  degree:\(deg)")
-
             let path = UIBezierPath(arcCenter: cPoint, radius: radius, startAngle: radiant, endAngle: radiant + CGFloat(M_PI), clockwise: false)
-            
             
             CATransaction.begin()
             CATransaction.setCompletionBlock({
@@ -64,7 +56,7 @@ class ViewController: UIViewController {
                 circle.removeFromSuperview()
             })
             
-            let duration = 10.0
+            let duration = 4.0
             
             let posAnim = CAKeyframeAnimation(keyPath: "position")
             posAnim.path = path.cgPath
@@ -96,9 +88,9 @@ class ViewController: UIViewController {
             CATransaction.commit()
         }
         
-//        animate(mainView: self.view, a: noSmallButton, b: noButton)
-//        animate(mainView: self.view, a: cancelSmallButton, b: cancelButton)
-//        animate(mainView: self.view, a: yesSmallButton, b: yesButton)
+        animate(mainView: self.view, a: cancelSmallButton, b: cancelButton)
+        animate(mainView: self.view, a: noSmallButton, b: noButton)
+        animate(mainView: self.view, a: yesSmallButton, b: yesButton)
         animate(mainView: self.view, a: speakSmallButton, b: speakButton)
     }
     
