@@ -20,8 +20,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var speakSmallButton: RoundedButton!
     @IBOutlet weak var yesSmallButton: RoundedButton!
 
-    var speakButtonCopy: RoundedButton?
-
     func animateAll() {
         func animate(mainView: UIView, a: UIView, b: UIView, onCompletition: @escaping ()->Void) {
             
@@ -92,14 +90,7 @@ class ViewController: UIViewController {
         animate(mainView: self.view, a: cancelSmallButton, b: cancelButton, onCompletition: {})
         animate(mainView: self.view, a: noSmallButton, b: noButton, onCompletition: {})
         animate(mainView: self.view, a: yesSmallButton, b: yesButton, onCompletition: {})
-        animate(mainView: self.view, a: speakSmallButton, b: speakButton, onCompletition: {
-            self.speakButtonCopy = RoundedButton(frame: self.speakButton.frame)
-            self.speakButtonCopy!.backgroundColor = self.speakButton.backgroundColor
-            self.speakButtonCopy!.layer.cornerRadius = self.speakButtonCopy!.frame.size.height / 2
-            self.speakButtonCopy!.addConstraints(self.speakButtonCopy!.constraints)
-            self.speakView?.insertSubview(self.speakButtonCopy!, belowSubview: self.speakButton)
-            self.speakButtonCopy!.alpha = 0
-        })
+        animate(mainView: self.view, a: speakSmallButton, b: speakButton, onCompletition: {})
     }
     
     override func viewDidLoad() {
@@ -122,30 +113,53 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
-    @IBAction func onSpeak(_ sender: Any) {
-        self.speakButtonCopy!.frame = self.speakButton.frame
-        self.speakButtonCopy!.alpha = 1
-        self.speakButton.alpha = 0
-        UIView.perform(UISystemAnimation.delete, on: [speakButtonCopy!], options: UIViewAnimationOptions.curveEaseInOut, animations: {
+    
+    func deleteButton(button: RoundedButton, onCompletition: @escaping ()->Void) {
+        let buttonCopy = RoundedButton(frame: button.frame)
+        buttonCopy.backgroundColor = button.backgroundColor
+        buttonCopy.layer.cornerRadius = button.frame.size.height / 2
+        button.superview?.insertSubview(buttonCopy, belowSubview: button)
+        button.alpha = 0
+        UIView.perform(UISystemAnimation.delete, on: [buttonCopy], options: UIViewAnimationOptions.curveEaseInOut, animations: {
         }, completion: { finished in
-            self.speakView.isHidden = true
+            onCompletition()
         })
     }
     
+    func deleteButtons(buttons: [RoundedButton], onCompletition: @escaping ()->Void) {
+        deleteButton(button: buttons[0]) {
+            self.deleteButton(button: buttons[1]) {
+            }
+            self.deleteButton(button: buttons[2]) {
+                self.speakView.isHidden = false
+                
+                self.cancelSmallButton.alpha = 1
+                self.noSmallButton.alpha = 1
+                self.yesSmallButton.alpha = 1
+                self.speakSmallButton.alpha = 1
+
+                self.animateAll()
+            }
+        }
+    }
+    
+    
+    @IBAction func onSpeak(_ sender: Any) {
+        deleteButton(button: speakButton) { 
+            self.speakView.isHidden = true
+        }
+    }
+    
     @IBAction func onCancel(_ sender: Any) {
-        self.speakView.isHidden = false
-        animateAll()
+        deleteButtons(buttons: [cancelButton, yesButton, noButton], onCompletition: {})
     }
     
     @IBAction func onYes(_ sender: Any) {
-        self.speakView.isHidden = false
-        animateAll()
+        deleteButtons(buttons: [yesButton, noButton, cancelButton], onCompletition: {})
     }
     
     @IBAction func onNo(_ sender: Any) {
-        self.speakView.isHidden = false
-        animateAll()
+        deleteButtons(buttons: [noButton, yesButton, cancelButton], onCompletition: {})
     }
 }
 
