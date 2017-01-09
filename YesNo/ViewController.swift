@@ -22,11 +22,6 @@ class ViewController: UIViewController {
 
     var speakButtonCopy: RoundedButton?
 
-    
-    func degreesToRadians(_ x: Double) -> CGFloat {
-        return CGFloat(x * M_PI / 180.0)
-    }
-
     func animateAll() {
         func animate(mainView: UIView, a: UIView, b: UIView, onCompletition: @escaping ()->Void) {
             
@@ -62,7 +57,7 @@ class ViewController: UIViewController {
                 onCompletition()
             })
             
-            let duration = 4.0
+            let duration = 2.0
             
             let posAnim = CAKeyframeAnimation(keyPath: "position")
             posAnim.path = path.cgPath
@@ -102,10 +97,6 @@ class ViewController: UIViewController {
             self.speakButtonCopy!.backgroundColor = self.speakButton.backgroundColor
             self.speakButtonCopy!.layer.cornerRadius = self.speakButtonCopy!.frame.size.height / 2
             self.speakButtonCopy!.addConstraints(self.speakButtonCopy!.constraints)
-//            self.speakButtonCopy!.setTitle(self.speakButton.titleLabel?.text, for: .normal)
-//            self.speakButtonCopy!.titleLabel?.font = self.speakButton.titleLabel?.font
-//            self.speakButtonCopy!.titleLabel?.textColor = self.speakButton.titleLabel?.textColor
-//            self.speakButtonCopy!.addTarget(self, action: #selector(self.onSpeak), for: .touchUpInside)
             self.speakView?.insertSubview(self.speakButtonCopy!, belowSubview: self.speakButton)
             self.speakButtonCopy!.alpha = 0
         })
@@ -136,25 +127,25 @@ class ViewController: UIViewController {
         self.speakButtonCopy!.frame = self.speakButton.frame
         self.speakButtonCopy!.alpha = 1
         self.speakButton.alpha = 0
-        animateAll()
         UIView.perform(UISystemAnimation.delete, on: [speakButtonCopy!], options: UIViewAnimationOptions.curveEaseInOut, animations: {
-            // any changes defined here will occur
-            // in parallel with the system animation
-            
         }, completion: { finished in
-            // any code entered here will be applied
-            // once the animation has completed
-            
+            self.speakView.isHidden = true
         })
     }
     
     @IBAction func onCancel(_ sender: Any) {
+        self.speakView.isHidden = false
+        animateAll()
     }
     
     @IBAction func onYes(_ sender: Any) {
+        self.speakView.isHidden = false
+        animateAll()
     }
     
     @IBAction func onNo(_ sender: Any) {
+        self.speakView.isHidden = false
+        animateAll()
     }
 }
 
