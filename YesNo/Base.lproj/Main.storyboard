@@ -41,7 +41,7 @@
                                     <constraint firstItem="Uxo-Pv-8U3" firstAttribute="leading" secondItem="Ro9-HJ-c1C" secondAttribute="leading" id="zPa-Uv-L64"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU1-cJ-2lO" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU1-cJ-2lO" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
                                 <rect key="frame" x="88" y="527" width="200" height="200"/>
                                 <color key="backgroundColor" red="1" green="0.5746027682" blue="0.033291428409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -62,7 +62,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WT3-99-adD">
                                 <rect key="frame" x="0.0" y="234" width="375" height="200"/>
                                 <subviews>
-                                    <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyL-Ro-xMh" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyL-Ro-xMh" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
                                         <rect key="frame" x="-60" y="0.0" width="200" height="200"/>
                                         <color key="backgroundColor" red="0.42745098040000001" green="0.65098039220000004" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -80,7 +80,7 @@
                                             <action selector="onYes:" destination="NuE-Pl-xvK" eventType="touchUpInside" id="Fub-pQ-Xb8"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7a-Xu-QZc" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7a-Xu-QZc" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
                                         <rect key="frame" x="235" y="0.0" width="200" height="200"/>
                                         <color key="backgroundColor" red="1" green="0.34069317329999999" blue="0.14403454490000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -113,7 +113,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="dSc-Rh-A4K">
                                         <rect key="frame" x="20" y="97.5" width="335" height="39"/>
                                         <subviews>
-                                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-bU-cPn" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-bU-cPn" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="39" height="39"/>
                                                 <color key="backgroundColor" red="1" green="0.34069317329999999" blue="0.14403454490000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -127,7 +127,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzN-l3-YBt" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzN-l3-YBt" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
                                                 <rect key="frame" x="98.5" y="0.0" width="39" height="39"/>
                                                 <color key="backgroundColor" red="1" green="0.5746027682" blue="0.033291428409999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -141,7 +141,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpU-2r-F7y" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpU-2r-F7y" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
                                                 <rect key="frame" x="197.5" y="0.0" width="39" height="39"/>
                                                 <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -155,7 +155,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
-                                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCP-Ig-lDS" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCP-Ig-lDS" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
                                                 <rect key="frame" x="296" y="0.0" width="39" height="39"/>
                                                 <color key="backgroundColor" red="0.42745098040000001" green="0.65098039220000004" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -181,7 +181,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-YZ-DLz">
                                 <rect key="frame" x="0.0" y="234" width="375" height="433"/>
                                 <subviews>
-                                    <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-u2-izZ" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-u2-izZ" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
                                         <rect key="frame" x="37" y="66" width="300" height="300"/>
                                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -196,7 +196,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="onSpeak:" destination="NuE-Pl-xvK" eventType="touchUpInside" id="JET-Wv-SaL"/>
+                                            <action selector="onSpeak:" destination="NuE-Pl-xvK" eventType="touchUpInside" id="kCz-Bj-nvx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -232,7 +232,7 @@
                         <outlet property="noSmallButton" destination="Vga-bU-cPn" id="pEr-an-e8S"/>
                         <outlet property="speakButton" destination="ZRH-u2-izZ" id="FN1-D1-mXX"/>
                         <outlet property="speakSmallButton" destination="QpU-2r-F7y" id="JGK-5N-siR"/>
-                        <outlet property="speakView" destination="1Kb-YZ-DLz" id="hXB-8e-9fR"/>
+                        <outlet property="speakView" destination="1Kb-YZ-DLz" id="Chz-w5-sI3"/>
                         <outlet property="yesButton" destination="kyL-Ro-xMh" id="9Jp-o8-riK"/>
                         <outlet property="yesSmallButton" destination="qCP-Ig-lDS" id="PXg-Ag-Lkd"/>
                     </connections>

@@ -21,3 +21,17 @@ import UIKit
         }
     }
 }
+
+@IBDesignable class RoundedView: UIView
+{
+    @IBInspectable var rounded: Bool = false {
+        willSet {
+            if newValue {
+                self.layer.cornerRadius = self.frame.size.height / 2
+            }
+            else{
+                self.layer.cornerRadius = 0
+            }
+        }
+    }
+}
