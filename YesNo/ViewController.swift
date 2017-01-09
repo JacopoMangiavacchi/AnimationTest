@@ -20,17 +20,42 @@ class ViewController: UIViewController {
     @IBOutlet weak var speakSmallButton: RoundedButton!
     @IBOutlet weak var yesSmallButton: RoundedButton!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        cancelButton.alpha = 0
+        noButton.alpha = 0
+        yesButton.alpha = 0
+        speakButton.alpha = 0
+        
+        noSmallButton.alpha = 0
+        cancelSmallButton.alpha = 0
+        speakSmallButton.alpha = 0
+        yesSmallButton.alpha = 0
+
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.animateSmall() })
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        animateSmall()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     func animateAll() {
         func animate(mainView: UIView, a: UIView, b: UIView, onCompletition: @escaping ()->Void) {
             
             let aPoint = a.superview!.convert(CGPoint(x: a.frame.origin.x, y: a.frame.origin.y), to: mainView)
             let bPoint = b.superview!.convert(CGPoint(x: b.frame.origin.x, y: b.frame.origin.y), to: mainView)
             let cPoint = CGPoint(x: min(aPoint.x, bPoint.x) + (abs(bPoint.x - aPoint.x)/2),
-                            y: min(aPoint.y, bPoint.y) + (abs(bPoint.y - aPoint.y)/2))
-
+                                 y: min(aPoint.y, bPoint.y) + (abs(bPoint.y - aPoint.y)/2))
+            
             b.alpha = 0
             a.alpha = 0
-
+            
             let circle = UIView()
             circle.backgroundColor = a.backgroundColor
             circle.frame = CGRect(origin: aPoint, size: a.frame.size)
@@ -55,7 +80,7 @@ class ViewController: UIViewController {
                 onCompletition()
             })
             
-            let duration = 2.0
+            let duration = 1.0
             
             let posAnim = CAKeyframeAnimation(keyPath: "position")
             posAnim.path = path.cgPath
@@ -79,7 +104,7 @@ class ViewController: UIViewController {
             cornerAnim.fillMode = kCAFillModeForwards
             cornerAnim.isRemovedOnCompletion = false
             cornerAnim.toValue = b.frame.size.height / 2
-
+            
             circle.layer.add(posAnim, forKey: nil)
             circle.layer.add(sizeAnim, forKey: nil)
             circle.layer.add(cornerAnim, forKey: nil)
@@ -93,26 +118,36 @@ class ViewController: UIViewController {
         animate(mainView: self.view, a: speakSmallButton, b: speakButton, onCompletition: {})
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func animateSmall() {
+        func animate(view: UIView, onCompletition: @escaping ()->Void) {
+            CATransaction.begin()
+            CATransaction.setCompletionBlock({
+                onCompletition()
+            })
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                view.alpha = 1
+            })
 
-        cancelButton.alpha = 0
-        noButton.alpha = 0
-        yesButton.alpha = 0
-        speakButton.alpha = 0
+            CATransaction.commit()
+        }
         
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.animateAll() })
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        animateAll()
+        noSmallButton.alpha = 0
+        cancelSmallButton.alpha = 0
+        speakSmallButton.alpha = 0
+        yesSmallButton.alpha = 0
+        
+        animate(view: self.noSmallButton) {
+            animate(view: self.cancelSmallButton) {
+                animate(view: self.speakSmallButton) {
+                    animate(view: self.yesSmallButton) {
+                        self.animateAll()
+                    }
+                }
+            }
+        }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     
     func deleteButton(button: RoundedButton, onCompletition: @escaping ()->Void) {
         let buttonCopy = RoundedButton(frame: button.frame)
@@ -128,18 +163,12 @@ class ViewController: UIViewController {
     
     func deleteButtons(buttons: [RoundedButton], onCompletition: @escaping ()->Void) {
         deleteButton(button: buttons[0]) {
+            self.speakView.isHidden = false
             self.deleteButton(button: buttons[1]) {
             }
             self.deleteButton(button: buttons[2]) {
-                self.speakView.isHidden = false
-                
-                self.cancelSmallButton.alpha = 1
-                self.noSmallButton.alpha = 1
-                self.yesSmallButton.alpha = 1
-                self.speakSmallButton.alpha = 1
-
-                self.animateAll()
             }
+            self.animateSmall()
         }
     }
     
