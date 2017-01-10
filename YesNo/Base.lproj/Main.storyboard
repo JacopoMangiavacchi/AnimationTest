@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,11 +111,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGg-Hl-gAA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="234"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="dSc-Rh-A4K">
-                                        <rect key="frame" x="20" y="97.5" width="335" height="39"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble_stroked.png" translatesAutoresizingMaskIntoConstraints="NO" id="KI2-Xa-9Zl">
+                                        <rect key="frame" x="8" y="43" width="286" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBt-ya-P0n">
+                                        <rect key="frame" x="296" y="149" width="69" height="39"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vga-bU-cPn" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="39" height="39"/>
+                                                <rect key="frame" x="30" y="0.0" width="39" height="39"/>
                                                 <color key="backgroundColor" red="1" green="0.34069317329999999" blue="0.14403454490000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Vga-bU-cPn" secondAttribute="height" multiplier="1:1" id="iMP-9Z-Df3"/>
@@ -128,7 +133,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzN-l3-YBt" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
-                                                <rect key="frame" x="98.5" y="0.0" width="39" height="39"/>
+                                                <rect key="frame" x="20" y="0.0" width="39" height="39"/>
                                                 <color key="backgroundColor" red="1" green="0.5746027682" blue="0.033291428409999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xzN-l3-YBt" secondAttribute="height" multiplier="1:1" id="nyV-s2-ZDx"/>
@@ -142,7 +147,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpU-2r-F7y" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
-                                                <rect key="frame" x="197.5" y="0.0" width="39" height="39"/>
+                                                <rect key="frame" x="10" y="0.0" width="39" height="39"/>
                                                 <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="QpU-2r-F7y" secondAttribute="height" multiplier="1:1" id="kEb-Vm-N7y"/>
@@ -156,7 +161,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCP-Ig-lDS" customClass="RoundedButton" customModule="YesNo" customModuleProvider="target">
-                                                <rect key="frame" x="296" y="0.0" width="39" height="39"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="39" height="39"/>
                                                 <color key="backgroundColor" red="0.42745098040000001" green="0.65098039220000004" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qCP-Ig-lDS" secondAttribute="height" multiplier="1:1" id="cjJ-0w-b8G"/>
@@ -170,12 +175,55 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="baseline" secondItem="xzN-l3-YBt" secondAttribute="baseline" id="09E-jX-09S"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="baseline" secondItem="qCP-Ig-lDS" secondAttribute="baseline" id="2hM-1w-5bw"/>
+                                            <constraint firstItem="qCP-Ig-lDS" firstAttribute="baseline" secondItem="QpU-2r-F7y" secondAttribute="baseline" id="4mj-t6-MyX"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="top" secondItem="xzN-l3-YBt" secondAttribute="top" id="7yY-hD-zZe"/>
+                                            <constraint firstItem="Vga-bU-cPn" firstAttribute="firstBaseline" secondItem="QpU-2r-F7y" secondAttribute="firstBaseline" id="8Av-LU-LmZ"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="firstBaseline" secondItem="Vga-bU-cPn" secondAttribute="firstBaseline" id="AAj-dL-Fwn"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="firstBaseline" secondItem="xzN-l3-YBt" secondAttribute="firstBaseline" id="AwB-0Y-Nd9"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="leading" secondItem="dBt-ya-P0n" secondAttribute="leading" constant="10" id="Lza-7C-oM6"/>
+                                            <constraint firstItem="Vga-bU-cPn" firstAttribute="firstBaseline" secondItem="xzN-l3-YBt" secondAttribute="firstBaseline" id="PMq-5s-mLl"/>
+                                            <constraint firstItem="Vga-bU-cPn" firstAttribute="baseline" secondItem="xzN-l3-YBt" secondAttribute="baseline" id="Qi1-P0-LQ7"/>
+                                            <constraint firstItem="Vga-bU-cPn" firstAttribute="firstBaseline" secondItem="qCP-Ig-lDS" secondAttribute="firstBaseline" id="Sgc-pA-uS0"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="firstBaseline" secondItem="qCP-Ig-lDS" secondAttribute="firstBaseline" id="U0k-hA-mz0"/>
+                                            <constraint firstItem="qCP-Ig-lDS" firstAttribute="firstBaseline" secondItem="QpU-2r-F7y" secondAttribute="firstBaseline" id="V6m-RQ-UFu"/>
+                                            <constraint firstItem="xzN-l3-YBt" firstAttribute="leading" secondItem="dBt-ya-P0n" secondAttribute="leading" constant="20" id="VFb-pi-heL"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="top" secondItem="Vga-bU-cPn" secondAttribute="top" id="W08-uf-EOs"/>
+                                            <constraint firstItem="qCP-Ig-lDS" firstAttribute="baseline" secondItem="xzN-l3-YBt" secondAttribute="baseline" id="Yof-rR-td8"/>
+                                            <constraint firstItem="qCP-Ig-lDS" firstAttribute="leading" secondItem="dBt-ya-P0n" secondAttribute="leading" id="Z6N-XU-CTr"/>
+                                            <constraint firstItem="xzN-l3-YBt" firstAttribute="firstBaseline" secondItem="Vga-bU-cPn" secondAttribute="firstBaseline" id="diJ-m4-LKu"/>
+                                            <constraint firstItem="Vga-bU-cPn" firstAttribute="baseline" secondItem="qCP-Ig-lDS" secondAttribute="baseline" id="eQI-Zs-Bfm"/>
+                                            <constraint firstItem="qCP-Ig-lDS" firstAttribute="firstBaseline" secondItem="Vga-bU-cPn" secondAttribute="firstBaseline" id="eaR-md-YfI"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="top" secondItem="dBt-ya-P0n" secondAttribute="top" id="ejh-Vc-etu"/>
+                                            <constraint firstItem="xzN-l3-YBt" firstAttribute="firstBaseline" secondItem="qCP-Ig-lDS" secondAttribute="firstBaseline" id="gxr-xy-9H3"/>
+                                            <constraint firstItem="qCP-Ig-lDS" firstAttribute="baseline" secondItem="Vga-bU-cPn" secondAttribute="baseline" id="haN-EJ-eMD"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="baseline" secondItem="Vga-bU-cPn" secondAttribute="baseline" id="i1k-Ct-lWS"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vga-bU-cPn" secondAttribute="trailing" id="imR-cb-DAj"/>
+                                            <constraint firstItem="xzN-l3-YBt" firstAttribute="firstBaseline" secondItem="QpU-2r-F7y" secondAttribute="firstBaseline" id="pkP-nX-b3p"/>
+                                            <constraint firstItem="xzN-l3-YBt" firstAttribute="baseline" secondItem="Vga-bU-cPn" secondAttribute="baseline" id="t2W-8l-t8F"/>
+                                            <constraint firstItem="Vga-bU-cPn" firstAttribute="baseline" secondItem="QpU-2r-F7y" secondAttribute="baseline" id="tuM-TR-TRT"/>
+                                            <constraint firstItem="qCP-Ig-lDS" firstAttribute="firstBaseline" secondItem="xzN-l3-YBt" secondAttribute="firstBaseline" id="voX-ak-Dss"/>
+                                            <constraint firstItem="xzN-l3-YBt" firstAttribute="baseline" secondItem="qCP-Ig-lDS" secondAttribute="baseline" id="wnD-PN-jrq"/>
+                                            <constraint firstItem="QpU-2r-F7y" firstAttribute="top" secondItem="qCP-Ig-lDS" secondAttribute="top" id="x42-m1-fCW"/>
+                                            <constraint firstItem="xzN-l3-YBt" firstAttribute="baseline" secondItem="QpU-2r-F7y" secondAttribute="baseline" id="xZz-Qx-Ymr"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vh8-lf-bHi">
+                                        <rect key="frame" x="39" y="70" width="204" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dSc-Rh-A4K" secondAttribute="trailing" constant="20" id="6UA-di-Jnz"/>
-                                    <constraint firstItem="dSc-Rh-A4K" firstAttribute="leading" secondItem="bGg-Hl-gAA" secondAttribute="leading" constant="20" id="oeR-3M-key"/>
-                                    <constraint firstItem="dSc-Rh-A4K" firstAttribute="centerY" secondItem="bGg-Hl-gAA" secondAttribute="centerY" id="tmZ-R7-nmE"/>
+                                    <constraint firstAttribute="trailing" secondItem="dBt-ya-P0n" secondAttribute="trailing" constant="10" id="Fua-Qo-za1"/>
+                                    <constraint firstItem="dBt-ya-P0n" firstAttribute="leading" secondItem="bGg-Hl-gAA" secondAttribute="leading" constant="296" id="NrE-Ku-0dc"/>
+                                    <constraint firstAttribute="bottom" secondItem="dBt-ya-P0n" secondAttribute="bottom" constant="46" id="U7G-Xf-492"/>
+                                    <constraint firstItem="dBt-ya-P0n" firstAttribute="top" secondItem="bGg-Hl-gAA" secondAttribute="top" constant="149" id="vYx-Hl-gCW"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Kb-YZ-DLz">
@@ -228,6 +276,8 @@
                     <connections>
                         <outlet property="cancelButton" destination="qU1-cJ-2lO" id="Dtf-Go-WaT"/>
                         <outlet property="cancelSmallButton" destination="xzN-l3-YBt" id="P2b-bN-TPR"/>
+                        <outlet property="messageBubble" destination="KI2-Xa-9Zl" id="OVr-l7-b8I"/>
+                        <outlet property="messageLabel" destination="vh8-lf-bHi" id="r99-77-oBs"/>
                         <outlet property="noButton" destination="M7a-Xu-QZc" id="m2d-Vd-uFG"/>
                         <outlet property="noSmallButton" destination="Vga-bU-cPn" id="pEr-an-e8S"/>
                         <outlet property="speakButton" destination="ZRH-u2-izZ" id="FN1-D1-mXX"/>
@@ -242,4 +292,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bubble_stroked.png" width="56" height="35"/>
+    </resources>
 </document>

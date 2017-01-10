@@ -16,6 +16,9 @@
 		EA0728CB1E0A9837000F04BA /* YesNoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0728CA1E0A9837000F04BA /* YesNoTests.swift */; };
 		EA0728D61E0A9837000F04BA /* YesNoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0728D51E0A9837000F04BA /* YesNoUITests.swift */; };
 		EA0728E41E0A9857000F04BA /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0728E31E0A9857000F04BA /* RoundedButton.swift */; };
+		EA2587621E252C72009A1FA4 /* bubble_stroked.png in Resources */ = {isa = PBXBuildFile; fileRef = EA25875F1E252C72009A1FA4 /* bubble_stroked.png */; };
+		EA2587631E252C72009A1FA4 /* bubble_stroked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2587601E252C72009A1FA4 /* bubble_stroked@2x.png */; };
+		EA2587641E252C72009A1FA4 /* bubble_stroked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2587611E252C72009A1FA4 /* bubble_stroked@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		EA0728D51E0A9837000F04BA /* YesNoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNoUITests.swift; sourceTree = "<group>"; };
 		EA0728D71E0A9837000F04BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA0728E31E0A9857000F04BA /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		EA25875F1E252C72009A1FA4 /* bubble_stroked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble_stroked.png; sourceTree = "<group>"; };
+		EA2587601E252C72009A1FA4 /* bubble_stroked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_stroked@2x.png"; sourceTree = "<group>"; };
+		EA2587611E252C72009A1FA4 /* bubble_stroked@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_stroked@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 				EA0728BE1E0A9837000F04BA /* LaunchScreen.storyboard */,
 				EA0728C11E0A9837000F04BA /* Info.plist */,
 				EA0728B91E0A9837000F04BA /* YesNo.xcdatamodeld */,
+				EA25875F1E252C72009A1FA4 /* bubble_stroked.png */,
+				EA2587601E252C72009A1FA4 /* bubble_stroked@2x.png */,
+				EA2587611E252C72009A1FA4 /* bubble_stroked@3x.png */,
 			);
 			path = YesNo;
 			sourceTree = "<group>";
@@ -241,7 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2587621E252C72009A1FA4 /* bubble_stroked.png in Resources */,
 				EA0728C01E0A9837000F04BA /* LaunchScreen.storyboard in Resources */,
+				EA2587641E252C72009A1FA4 /* bubble_stroked@3x.png in Resources */,
+				EA2587631E252C72009A1FA4 /* bubble_stroked@2x.png in Resources */,
 				EA0728BD1E0A9837000F04BA /* Assets.xcassets in Resources */,
 				EA0728B81E0A9837000F04BA /* Main.storyboard in Resources */,
 			);

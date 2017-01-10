@@ -8,6 +8,25 @@
 
 import UIKit
 
+extension UILabel{
+    
+    func setTextWithTypeAnimation(typedText: String, characterInterval: TimeInterval = 0.02) {
+        text = ""
+        DispatchQueue.global(qos: .userInteractive).async {
+            
+            for character in typedText.characters {
+                DispatchQueue.main.async {
+                    self.text = self.text! + String(character)
+                }
+                Thread.sleep(forTimeInterval: characterInterval)
+            }
+            
+        }
+    }
+    
+}
+
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var speakView: UIView!
@@ -19,6 +38,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var cancelSmallButton: RoundedButton!
     @IBOutlet weak var speakSmallButton: RoundedButton!
     @IBOutlet weak var yesSmallButton: RoundedButton!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageBubble: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +53,9 @@ class ViewController: UIViewController {
         cancelSmallButton.alpha = 0
         speakSmallButton.alpha = 0
         yesSmallButton.alpha = 0
+
+        messageLabel.alpha = 0
+        messageBubble.alpha = 0
 
         //DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.animateSmall() })
     }
@@ -137,15 +161,29 @@ class ViewController: UIViewController {
         speakSmallButton.alpha = 0
         yesSmallButton.alpha = 0
         
-        animate(view: self.noSmallButton) {
-            animate(view: self.cancelSmallButton) {
-                animate(view: self.speakSmallButton) {
-                    animate(view: self.yesSmallButton) {
+        messageLabel.alpha = 1
+        messageBubble.alpha = 1
+        
+        messageLabel.setTextWithTypeAnimation(typedText: "Is this a good restaurant?")
+        
+        animate(view: self.yesSmallButton) {
+            animate(view: self.speakSmallButton) {
+                animate(view: self.cancelSmallButton) {
+                    animate(view: self.noSmallButton) {
                         self.animateAll()
                     }
                 }
             }
         }
+//        animate(view: self.noSmallButton) {
+//            animate(view: self.cancelSmallButton) {
+//                animate(view: self.speakSmallButton) {
+//                    animate(view: self.yesSmallButton) {
+//                        self.animateAll()
+//                    }
+//                }
+//            }
+//        }
     }
     
     
@@ -164,6 +202,9 @@ class ViewController: UIViewController {
     func deleteButtons(buttons: [RoundedButton], onCompletition: @escaping ()->Void) {
         deleteButton(button: buttons[0]) {
             self.speakView.isHidden = false
+            self.messageLabel.alpha = 0
+            self.messageBubble.alpha = 0
+
             self.deleteButton(button: buttons[1]) {
             }
             self.deleteButton(button: buttons[2]) {
