@@ -39,8 +39,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var speakSmallButton: RoundedButton!
     @IBOutlet weak var yesSmallButton: RoundedButton!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var messageBubble: UIImageView!
+    @IBOutlet weak var messageBubble: UIView!
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,6 +58,7 @@ class ViewController: UIViewController {
 
         messageLabel.alpha = 0
         messageBubble.alpha = 0
+        messageBubble.layer.cornerRadius = 20
 
         //DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.animateSmall() })
     }
@@ -78,7 +81,7 @@ class ViewController: UIViewController {
                                  y: min(aPoint.y, bPoint.y) + (abs(bPoint.y - aPoint.y)/2))
             
             b.alpha = 0
-            a.alpha = 0
+            //a.alpha = 0
             
             let circle = UIView()
             circle.backgroundColor = a.backgroundColor
@@ -175,15 +178,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-//        animate(view: self.noSmallButton) {
-//            animate(view: self.cancelSmallButton) {
-//                animate(view: self.speakSmallButton) {
-//                    animate(view: self.yesSmallButton) {
-//                        self.animateAll()
-//                    }
-//                }
-//            }
-//        }
     }
     
     
