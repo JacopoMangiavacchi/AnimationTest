@@ -40,11 +40,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var yesSmallButton: RoundedButton!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageBubble: UIView!
+    @IBOutlet weak var responseLabel: UILabel!
+    @IBOutlet weak var responeBubble: UIView!
+    @IBOutlet weak var responseSmallButton: RoundedButton!
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        responseLabel.alpha = 0
+        responeBubble.alpha = 0
+        responseSmallButton.alpha = 0
 
         cancelButton.alpha = 0
         noButton.alpha = 0
@@ -59,6 +66,7 @@ class ViewController: UIViewController {
         messageLabel.alpha = 0
         messageBubble.alpha = 0
         messageBubble.layer.cornerRadius = 20
+        responeBubble.layer.cornerRadius = 20
 
         //DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { self.animateSmall() })
     }
@@ -152,7 +160,7 @@ class ViewController: UIViewController {
                 onCompletition()
             })
             
-            UIView.animate(withDuration: 0.25, animations: {
+            UIView.animate(withDuration: 0.125, animations: {
                 view.alpha = 1
             })
 
@@ -166,13 +174,17 @@ class ViewController: UIViewController {
         
         messageLabel.alpha = 1
         messageBubble.alpha = 1
-        
+
+        responseLabel.alpha = 0
+        responeBubble.alpha = 0
+        responseSmallButton.alpha = 0
+
         messageLabel.setTextWithTypeAnimation(typedText: "Is this a good restaurant?")
         
-        animate(view: self.yesSmallButton) {
-            animate(view: self.speakSmallButton) {
-                animate(view: self.cancelSmallButton) {
-                    animate(view: self.noSmallButton) {
+        animate(view: self.noSmallButton) {
+            animate(view: self.cancelSmallButton) {
+                animate(view: self.speakSmallButton) {
+                    animate(view: self.yesSmallButton) {
                         self.animateAll()
                     }
                 }
@@ -209,7 +221,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func onSpeak(_ sender: Any) {
-        deleteButton(button: speakButton) { 
+        responseLabel.alpha = 1
+        responeBubble.alpha = 1
+        responseSmallButton.alpha = 1
+
+        
+        deleteButton(button: speakButton) {
             self.speakView.isHidden = true
         }
     }
